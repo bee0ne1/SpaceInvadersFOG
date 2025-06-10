@@ -4,22 +4,22 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     private InputControls actions;
-    //private RigidBody2D rb;
+    private Rigidbody2D rb;
     public float speed;
     
 
-    void Wake()
+    void Awake()
     {
-        
         actions = new InputControls();
     }
-
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
+    
 
     // Update is called once per frame
     void Update()
