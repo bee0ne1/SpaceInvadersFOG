@@ -8,6 +8,7 @@ public class PlayerShoot : Shooter
     {
         actions = new InputControls();
         actions.Player.Shoot.performed += ctx => TryShoot();
+        direction = Vector2.up;
     }
     
     void OnEnable()
@@ -20,19 +21,13 @@ public class PlayerShoot : Shooter
         actions.Player.Disable();
     }
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        direction = Vector2.up;
-    }
-    
     void TryShoot()
     {
         if (currentBullet == null)
             Shoot();
     }
     
-    public override void Shoot()
+    protected override void Shoot()
     {
         currentBullet = SpawnBullet();
     }

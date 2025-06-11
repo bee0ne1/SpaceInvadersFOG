@@ -13,4 +13,10 @@ public class EnemyMovement : MonoBehaviour
     {
         
     }
+    
+    //verificar se tem inimigo ao lado
+    //verificar a direcao dos inimigos ao lado
+    //verificar se tem inimigo abaixo
+    
+    
 }

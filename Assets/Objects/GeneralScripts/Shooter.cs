@@ -3,6 +3,7 @@ using UnityEngine;
 public abstract class Shooter : MonoBehaviour, ICharacterShooter 
 {
     public Vector2 direction { get; set; }
+    
     public Bullet bulletPrefab;
     public Transform bulletspawn; 
     
@@ -16,7 +17,7 @@ public abstract class Shooter : MonoBehaviour, ICharacterShooter
     }
     
 
-    public abstract void Shoot();
+    protected abstract void Shoot();
 
 
 }
