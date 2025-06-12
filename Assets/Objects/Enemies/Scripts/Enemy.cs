@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Enemy : Shooter, ICharacterStats
 {
@@ -6,6 +7,7 @@ public class Enemy : Shooter, ICharacterStats
     public bool dead { get; set; }
     
     private EnemyManager manager;
+    public Animator animator;
     private int row;
     private int col;
     
@@ -14,7 +16,7 @@ public class Enemy : Shooter, ICharacterStats
         life = 1;
         dead = false;
         direction = Vector2.down;
-        //animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
     
     
@@ -31,14 +33,26 @@ public class Enemy : Shooter, ICharacterStats
         return !manager.HasEnemyBelow(row, col);
     }
 
-    public void OnDeath()
+    public void Death()
     {
-        manager.RemoveEnemy(row, col);
-        Destroy(gameObject);
+        life = 0;
+        dead = true;
+        animator.Play("dying");
+        Destroy(gameObject,0.2f);
     }
     
-    protected override void Shoot()
+    public override void Shoot()
     {
         
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Wall"))
+            manager.NotifyWallHit();
+        if (other.CompareTag("PlayerBullet"))
+            Death();
+    }
+    
+    
 }

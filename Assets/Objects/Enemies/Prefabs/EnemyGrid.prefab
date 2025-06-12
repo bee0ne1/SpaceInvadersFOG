@@ -44,10 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dea9f04167b41c49cb6ec98a0dc4a796, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 9154870448324644728, guid: dca4907f6d0e8a48f9d4b89e7041880b, type: 3}
-  enemySprites:
-  - {fileID: 1504096538152212585, guid: c599fd358129f62fa8ecd74496e22ae7, type: 3}
-  - {fileID: -8087674160085439956, guid: c599fd358129f62fa8ecd74496e22ae7, type: 3}
-  - {fileID: 3705950429458302301, guid: c599fd358129f62fa8ecd74496e22ae7, type: 3}
-  - {fileID: -4583131672698089841, guid: c599fd358129f62fa8ecd74496e22ae7, type: 3}
-  - {fileID: 1863726200222006530, guid: c599fd358129f62fa8ecd74496e22ae7, type: 3}
+  enemyPrefabs:
+  - {fileID: 5175162807179551734, guid: 33e26ee795aaa09f0a2f1fa9dc4edd24, type: 3}
+  - {fileID: 5811356767785259024, guid: c87855a921bb100fdb1f63bbee4b9557, type: 3}
+  - {fileID: 8122966122295181373, guid: b3e54347aff44b752bbefb7a955bb3b3, type: 3}
+  - {fileID: 5530742861850516582, guid: 5971eb1326d536cc697f6b23838f791c, type: 3}
+  - {fileID: 4543904866779082841, guid: f3a52e39fff74181498bb005639ae9ea, type: 3}

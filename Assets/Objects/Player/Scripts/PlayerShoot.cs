@@ -27,7 +27,7 @@ public class PlayerShoot : Shooter
             Shoot();
     }
     
-    protected override void Shoot()
+    public override void Shoot()
     {
         currentBullet = SpawnBullet();
     }

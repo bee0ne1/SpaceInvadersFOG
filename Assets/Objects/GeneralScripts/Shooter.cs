@@ -17,7 +17,7 @@ public abstract class Shooter : MonoBehaviour, ICharacterShooter
     }
     
 
-    protected abstract void Shoot();
+    public abstract void Shoot();
 
 
 }

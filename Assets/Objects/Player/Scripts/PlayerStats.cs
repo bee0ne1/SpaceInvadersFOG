@@ -18,11 +18,12 @@ public class PlayerStats : MonoBehaviour, ICharacterStats
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        Death();
+        if (!other.collider.CompareTag("Wall"))
+            Death();
     }
 
 
-    void Death()
+    public void Death()
     {
         life = 0;
         dead = true;
@@ -33,7 +34,7 @@ public class PlayerStats : MonoBehaviour, ICharacterStats
         var shoot = GetComponent<PlayerShoot>();
         if (shoot != null) shoot.enabled = false;
         
-        Destroy(gameObject, 2f); 
+        Destroy(gameObject, 1f); 
     }
     
 
