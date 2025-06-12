@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1273041300039358394, guid: dca4907f6d0e8a48f9d4b89e7041880b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.66
+      value: -3.1
       objectReference: {fileID: 0}
     - target: {fileID: 1273041300039358394, guid: dca4907f6d0e8a48f9d4b89e7041880b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.6
+      value: 1.44
       objectReference: {fileID: 0}
     - target: {fileID: 1273041300039358394, guid: dca4907f6d0e8a48f9d4b89e7041880b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -48,19 +48,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9032369632721794757, guid: dca4907f6d0e8a48f9d4b89e7041880b, type: 3}
+      propertyPath: bulletspawn
+      value: 
+      objectReference: {fileID: 624154541839602784}
+    - target: {fileID: 9032369632721794757, guid: dca4907f6d0e8a48f9d4b89e7041880b, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 6029650050749083688, guid: d3347d311f64b1b528835fd798aeeced, type: 3}
     - target: {fileID: 9154870448324644728, guid: dca4907f6d0e8a48f9d4b89e7041880b, type: 3}
       propertyPath: m_Name
       value: Enemy1 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 9154870448324644728, guid: dca4907f6d0e8a48f9d4b89e7041880b, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1335842032613982037, guid: dca4907f6d0e8a48f9d4b89e7041880b, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4147167553711838877, guid: dca4907f6d0e8a48f9d4b89e7041880b, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 9154870448324644728, guid: dca4907f6d0e8a48f9d4b89e7041880b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 521028830277979031}
   m_SourcePrefab: {fileID: 100100000, guid: dca4907f6d0e8a48f9d4b89e7041880b, type: 3}
+--- !u!4 &624154541839602784 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3491429027834984686, guid: dca4907f6d0e8a48f9d4b89e7041880b, type: 3}
+  m_PrefabInstance: {fileID: 4097568728179059854}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5175162807179551734 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9154870448324644728, guid: dca4907f6d0e8a48f9d4b89e7041880b, type: 3}

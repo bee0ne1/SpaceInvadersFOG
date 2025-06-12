@@ -9,7 +9,11 @@ public class Enemy : Shooter, ICharacterStats
     
     private EnemyManager manager;
     private Animator animator;
+<<<<<<< Updated upstream
     private Bullet currentBullet;
+=======
+    //private Bullet currentBullet;
+>>>>>>> Stashed changes
     private int row;
     private int col;
     
@@ -21,6 +25,14 @@ public class Enemy : Shooter, ICharacterStats
         animator = GetComponent<Animator>();
     }
 
+<<<<<<< Updated upstream
+=======
+    private void Update()
+    {
+        CanShoot();
+    }
+
+>>>>>>> Stashed changes
     // Método que o EnemyManager chama para registrar a posição do inimigo
     public void SetPositionInGrid(int r, int c, EnemyManager m)
     {
@@ -31,6 +43,7 @@ public class Enemy : Shooter, ICharacterStats
     
     public override void CanShoot()
     {
+<<<<<<< Updated upstream
         if (manager == null || dead) return;
             
         Shoot();
@@ -42,6 +55,18 @@ public class Enemy : Shooter, ICharacterStats
         SpawnBullet();
     }
     
+=======
+        if (!manager.HasEnemyBelow(row, col) && !dead)
+        {
+            Shoot();
+        }
+    }
+    
+    public override void Shoot()
+    {
+        //SpawnBullet();
+    }
+>>>>>>> Stashed changes
     public void Death()
     {
         life = 0;
@@ -49,8 +74,12 @@ public class Enemy : Shooter, ICharacterStats
         animator.Play("dying");
         Destroy(gameObject,0.2f);
     }
+<<<<<<< Updated upstream
     
     
+=======
+
+>>>>>>> Stashed changes
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Wall"))

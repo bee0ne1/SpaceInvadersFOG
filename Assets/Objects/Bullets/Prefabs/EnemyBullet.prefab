@@ -1,6 +1,10 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< Updated upstream
 --- !u!1 &3909656396469446050
+=======
+--- !u!1 &3598420199031221669
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,6 +12,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 7137349398695191443}
   - component: {fileID: 4788919515349376308}
   - component: {fileID: 3383956275826756539}
@@ -17,32 +22,62 @@ GameObject:
   m_Layer: 8
   m_Name: EnemyBullet
   m_TagString: EnemyBullet
+=======
+  - component: {fileID: 6194266507161780419}
+  - component: {fileID: 7204099447076763160}
+  - component: {fileID: 6029650050749083688}
+  - component: {fileID: 7046919657418023872}
+  - component: {fileID: 2484444428718846108}
+  - component: {fileID: 5299467083852355502}
+  m_Layer: 8
+  m_Name: EnemyBullet
+  m_TagString: Untagged
+>>>>>>> Stashed changes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream
 --- !u!4 &7137349398695191443
+=======
+--- !u!4 &6194266507161780419
+>>>>>>> Stashed changes
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 3909656396469446050}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.66, y: 0.63, z: 0}
+=======
+  m_GameObject: {fileID: 3598420199031221669}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.65722, y: -0.41099, z: 0}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!212 &4788919515349376308
+=======
+--- !u!212 &7204099447076763160
+>>>>>>> Stashed changes
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 3909656396469446050}
+=======
+  m_GameObject: {fileID: 3598420199031221669}
+>>>>>>> Stashed changes
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -79,8 +114,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
+<<<<<<< Updated upstream
   m_SortingOrder: 1
   m_Sprite: {fileID: -1623999382, guid: c599fd358129f62fa8ecd74496e22ae7, type: 3}
+=======
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -1623999382, guid: 5f11bd1b7bed72556886cd343cdc8b51, type: 3}
+>>>>>>> Stashed changes
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -91,14 +131,35 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< Updated upstream
 --- !u!50 &3383956275826756539
+=======
+--- !u!114 &6029650050749083688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3598420199031221669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f451361f5d2029e2bf1450f95979346, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+--- !u!50 &7046919657418023872
+>>>>>>> Stashed changes
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 3909656396469446050}
+=======
+  m_GameObject: {fileID: 3598420199031221669}
+>>>>>>> Stashed changes
   m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -106,7 +167,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
+<<<<<<< Updated upstream
   m_GravityScale: 0
+=======
+  m_GravityScale: 1
+>>>>>>> Stashed changes
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -118,13 +183,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+<<<<<<< Updated upstream
 --- !u!61 &2577853482845250852
+=======
+--- !u!61 &2484444428718846108
+>>>>>>> Stashed changes
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 3909656396469446050}
+=======
+  m_GameObject: {fileID: 3598420199031221669}
+>>>>>>> Stashed changes
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -164,6 +237,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.03, y: 0.07}
   m_EdgeRadius: 0
+<<<<<<< Updated upstream
 --- !u!114 &4054866684816905508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,13 +252,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
 --- !u!95 &4090921007936736066
+=======
+--- !u!95 &5299467083852355502
+>>>>>>> Stashed changes
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 3909656396469446050}
+=======
+  m_GameObject: {fileID: 3598420199031221669}
+>>>>>>> Stashed changes
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 97da4a1c31d8d01c3ac33a0a911850bf, type: 2}

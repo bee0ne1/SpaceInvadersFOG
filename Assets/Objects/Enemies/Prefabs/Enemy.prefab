@@ -1,6 +1,10 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< Updated upstream
 --- !u!1 &8632075101670049152
+=======
+--- !u!1 &3766064410740577999
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,7 +12,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 2122065006500362986}
+=======
+  - component: {fileID: 3491429027834984686}
+>>>>>>> Stashed changes
   m_Layer: 9
   m_Name: BulletSpawn
   m_TagString: Untagged
@@ -16,16 +24,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream
 --- !u!4 &2122065006500362986
+=======
+--- !u!4 &3491429027834984686
+>>>>>>> Stashed changes
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 8632075101670049152}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.1, z: 0}
+=======
+  m_GameObject: {fileID: 3766064410740577999}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.07, z: 0}
+>>>>>>> Stashed changes
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -65,7 +84,11 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 1
   m_Children:
+<<<<<<< Updated upstream
   - {fileID: 2122065006500362986}
+=======
+  - {fileID: 3491429027834984686}
+>>>>>>> Stashed changes
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6032775437908085516
@@ -112,7 +135,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -4583131672698089841, guid: c599fd358129f62fa8ecd74496e22ae7, type: 3}
+  m_Sprite: {fileID: 3705950429458302301, guid: c599fd358129f62fa8ecd74496e22ae7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -135,8 +158,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b59a76be369ff175b8a7405a4bd0a711, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   bulletPrefab: {fileID: 4054866684816905508, guid: d3347d311f64b1b528835fd798aeeced, type: 3}
   bulletspawn: {fileID: 2122065006500362986}
+=======
+  bulletPrefab: {fileID: 6029650050749083688, guid: d3347d311f64b1b528835fd798aeeced, type: 3}
+  bulletspawn: {fileID: 3491429027834984686}
+>>>>>>> Stashed changes
 --- !u!61 &6981018135838200710
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -175,7 +203,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.11, y: 0.08}
+    oldSize: {x: 0.09, y: 0.08}
     newSize: {x: 0.1, y: 0.1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -220,7 +248,7 @@ Animator:
   m_GameObject: {fileID: 9154870448324644728}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 060f9436941cf588d8bfd7e0a66bb8f9, type: 2}
+  m_Controller: {fileID: 9100000, guid: 27fc826395688b9648a89c1192a2776f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

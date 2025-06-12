@@ -16,8 +16,13 @@ public abstract class Shooter : MonoBehaviour, ICharacterShooter
         return newBullet;
     }
     
-
+    public abstract void CanShoot();
     public abstract void Shoot();
+<<<<<<< Updated upstream
     public abstract void CanShoot();
 
+=======
+
+    
+>>>>>>> Stashed changes
 }
