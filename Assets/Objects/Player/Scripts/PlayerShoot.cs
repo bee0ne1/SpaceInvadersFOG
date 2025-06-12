@@ -7,7 +7,7 @@ public class PlayerShoot : Shooter
     void Awake()
     {
         actions = new InputControls();
-        actions.Player.Shoot.performed += ctx => CanShoot();
+        actions.Player.Shoot.performed += ctx => TryShoot();
         direction = Vector2.up;
     }
     
@@ -21,7 +21,7 @@ public class PlayerShoot : Shooter
         actions.Player.Disable();
     }
     
-    public override void CanShoot()
+    void TryShoot()
     {
         if (currentBullet == null)
             Shoot();

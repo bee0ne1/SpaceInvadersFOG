@@ -14,9 +14,6 @@ public class EnemyManager : MonoBehaviour
     private float moveSpeed = 0.3f;
     private float moveInterval;
     private float moveTimer = 0f;
-    private float shootTimer = 0f;
-    private float shootInterval;
-    
     private int moveDirection = 1;
     private bool shouldChangeDirection = false;
     private bool toggleAnimation = false;
@@ -46,29 +43,18 @@ public class EnemyManager : MonoBehaviour
     void Update()
     {
         moveTimer += Time.deltaTime;
-        
+
         int remainingEnemies = CountRemainingEnemies();
         float difficultyFactor = Mathf.Clamp01(1f - (remainingEnemies / (float)(rows * cols)));
-        
         moveInterval = Mathf.Lerp(0.05f, 0.5f, 1f - difficultyFactor);
-        shootInterval = Mathf.Lerp(0.5f, 1f, 1f - difficultyFactor);
-        
+
         if (moveTimer >= moveInterval)
         {
             MoveGrid();
             moveTimer = 0f;
         }
-        
-        shootTimer += Time.deltaTime;
-        if (shootTimer >= shootInterval)
-        {
-            TryShoot();
-            shootTimer = 0f;
-        }
     }
-    
-    
-    
+
     void MoveGrid()
     {
         if (shouldChangeDirection)
@@ -99,24 +85,6 @@ public class EnemyManager : MonoBehaviour
                 }
             }
         }
-    }
-    
-    
-    void TryShoot()
-    {
-        // Encontra todos os inimigos vivos na cena
-        if (CountRemainingEnemies() == 0) return;
-
-        // Agrupa por coluna (X arredondado) e pega o de menor Y (mais embaixo)
-        var bottomEnemies = GetBottomEnemies();
-        
-        // Escolhe um aleatório
-        Enemy chosen = bottomEnemies[Random.Range(0, bottomEnemies.Count)];
-
-        // Faz ele atirar
-        Shooter shooter = chosen.GetComponent<Shooter>();
-        shooter.CanShoot();
-        
     }
 
     public void NotifyWallHit()

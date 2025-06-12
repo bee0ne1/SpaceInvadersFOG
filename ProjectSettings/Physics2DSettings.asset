@@ -53,8 +53,12 @@ Physics2DSettings:
   m_ReuseCollisionCallbacks: 1
   m_AutoSyncTransforms: 0
   m_GizmoOptions: 10
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_LayerCollisionMatrix: ffffffffffffffffffffffffbffffffffffffffffffffffff7fffffffffffffffffcfffffffeffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 =======
   m_LayerCollisionMatrix: ffffffffffffffffffffffffbffffffffffffffffffffffff7feffffffffffffbfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 >>>>>>> Stashed changes
+=======
+  m_LayerCollisionMatrix: ffffffffffffffffffffffffbffffffffffffffffffffffff7ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+>>>>>>> parent of 6d5a5f5 (enemy shooting system)

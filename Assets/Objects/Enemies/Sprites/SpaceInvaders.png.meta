@@ -1,13 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-<<<<<<< Updated upstream
 guid: c599fd358129f62fa8ecd74496e22ae7
-=======
-guid: 5f11bd1b7bed72556886cd343cdc8b51
->>>>>>> Stashed changes
-=======
-guid: 8d7af7a93154424c69055b2d466b4b1b
->>>>>>> parent of 6d5a5f5 (enemy shooting system)
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -178,10 +170,10 @@ TextureImporter:
       name: SpaceInvaders_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 67
-        width: 13
-        height: 10
+        x: 3
+        y: 68
+        width: 11
+        height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,10 +192,10 @@ TextureImporter:
       name: SpaceInvaders_1
       rect:
         serializedVersion: 2
-        x: 3
-        y: 51
-        width: 10
-        height: 10
+        x: 4
+        y: 52
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,10 +214,10 @@ TextureImporter:
       name: SpaceInvaders_2
       rect:
         serializedVersion: 2
-        x: 18
-        y: 66
-        width: 13
-        height: 11
+        x: 19
+        y: 67
+        width: 11
+        height: 9
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,10 +236,10 @@ TextureImporter:
       name: SpaceInvaders_3
       rect:
         serializedVersion: 2
-        x: 19
-        y: 51
-        width: 10
-        height: 10
+        x: 20
+        y: 52
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,10 +258,10 @@ TextureImporter:
       name: SpaceInvaders_4
       rect:
         serializedVersion: 2
-        x: 37
-        y: 68
-        width: 5
-        height: 8
+        x: 39
+        y: 69
+        width: 1
+        height: 6
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -288,10 +280,10 @@ TextureImporter:
       name: SpaceInvaders_5
       rect:
         serializedVersion: 2
-        x: 50
-        y: 47
-        width: 28
-        height: 14
+        x: 51
+        y: 48
+        width: 26
+        height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,10 +302,10 @@ TextureImporter:
       name: SpaceInvaders_6
       rect:
         serializedVersion: 2
-        x: 67
-        y: 65
-        width: 11
-        height: 12
+        x: 68
+        y: 66
+        width: 9
+        height: 10
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -332,10 +324,10 @@ TextureImporter:
       name: SpaceInvaders_7
       rect:
         serializedVersion: 2
-        x: 3
-        y: 35
-        width: 11
-        height: 10
+        x: 4
+        y: 36
+        width: 9
+        height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -354,10 +346,10 @@ TextureImporter:
       name: SpaceInvaders_8
       rect:
         serializedVersion: 2
-        x: 18
-        y: 35
-        width: 13
-        height: 10
+        x: 19
+        y: 36
+        width: 11
+        height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -376,10 +368,10 @@ TextureImporter:
       name: SpaceInvaders_9
       rect:
         serializedVersion: 2
-        x: 37
-        y: 36
-        width: 7
-        height: 7
+        x: 38
+        y: 37
+        width: 5
+        height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -398,10 +390,10 @@ TextureImporter:
       name: SpaceInvaders_10
       rect:
         serializedVersion: 2
-        x: 50
-        y: 31
-        width: 28
-        height: 14
+        x: 51
+        y: 32
+        width: 26
+        height: 12
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -420,10 +412,10 @@ TextureImporter:
       name: SpaceInvaders_11
       rect:
         serializedVersion: 2
-        x: 3
-        y: 19
-        width: 10
-        height: 10
+        x: 4
+        y: 20
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -442,10 +434,10 @@ TextureImporter:
       name: SpaceInvaders_12
       rect:
         serializedVersion: 2
-        x: 19
-        y: 19
-        width: 10
-        height: 10
+        x: 20
+        y: 20
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -464,10 +456,10 @@ TextureImporter:
       name: SpaceInvaders_13
       rect:
         serializedVersion: 2
-        x: 32
-        y: 18
-        width: 17
-        height: 11
+        x: 34
+        y: 19
+        width: 13
+        height: 9
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -486,10 +478,10 @@ TextureImporter:
       name: SpaceInvaders_14
       rect:
         serializedVersion: 2
-        x: 79
-        y: 17
-        width: 33
-        height: 13
+        x: 80
+        y: 18
+        width: 32
+        height: 11
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -508,10 +500,10 @@ TextureImporter:
       name: SpaceInvaders_15
       rect:
         serializedVersion: 2
-        x: 3
-        y: 3
-        width: 10
-        height: 10
+        x: 4
+        y: 4
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -530,10 +522,10 @@ TextureImporter:
       name: SpaceInvaders_16
       rect:
         serializedVersion: 2
-        x: 19
-        y: 3
-        width: 10
-        height: 10
+        x: 20
+        y: 4
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -552,10 +544,10 @@ TextureImporter:
       name: SpaceInvaders_17
       rect:
         serializedVersion: 2
-        x: 52
+        x: 53
         y: 0
-        width: 10
-        height: 5
+        width: 8
+        height: 4
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -574,10 +566,10 @@ TextureImporter:
       name: SpaceInvaders_18
       rect:
         serializedVersion: 2
-        x: 66
+        x: 67
         y: 0
-        width: 10
-        height: 5
+        width: 8
+        height: 4
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -596,12 +588,12 @@ TextureImporter:
       name: SpaceInvaders_19
       rect:
         serializedVersion: 2
-        x: 47
-        y: 66
-        width: 18
-        height: 11
+        x: 48
+        y: 68
+        width: 16
+        height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -618,12 +610,12 @@ TextureImporter:
       name: SpaceInvaders_20
       rect:
         serializedVersion: 2
-        x: 36
-        y: 51
-        width: 7
-        height: 9
+        x: 38
+        y: 52
+        width: 3
+        height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -640,12 +632,12 @@ TextureImporter:
       name: SpaceInvaders_21
       rect:
         serializedVersion: 2
-        x: 85
-        y: 51
-        width: 6
-        height: 10
+        x: 87
+        y: 52
+        width: 3
+        height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -662,12 +654,12 @@ TextureImporter:
       name: SpaceInvaders_22
       rect:
         serializedVersion: 2
-        x: 31
-        y: 1
-        width: 19
-        height: 14
+        x: 33
+        y: 2
+        width: 15
+        height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -684,12 +676,12 @@ TextureImporter:
       name: SpaceInvaders_23
       rect:
         serializedVersion: 2
-        x: 50
-        y: 15
-        width: 28
-        height: 14
+        x: 51
+        y: 16
+        width: 26
+        height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

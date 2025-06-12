@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using System.Collections;
 
@@ -8,12 +7,16 @@ public class Enemy : Shooter, ICharacterStats
     public bool dead { get; set; }
     
     private EnemyManager manager;
+<<<<<<< HEAD
     private Animator animator;
 <<<<<<< Updated upstream
     private Bullet currentBullet;
 =======
     //private Bullet currentBullet;
 >>>>>>> Stashed changes
+=======
+    public Animator animator;
+>>>>>>> parent of 6d5a5f5 (enemy shooting system)
     private int row;
     private int col;
     
@@ -24,6 +27,7 @@ public class Enemy : Shooter, ICharacterStats
         direction = Vector2.down;
         animator = GetComponent<Animator>();
     }
+<<<<<<< HEAD
 
 <<<<<<< Updated upstream
 =======
@@ -33,6 +37,10 @@ public class Enemy : Shooter, ICharacterStats
     }
 
 >>>>>>> Stashed changes
+=======
+    
+    
+>>>>>>> parent of 6d5a5f5 (enemy shooting system)
     // Método que o EnemyManager chama para registrar a posição do inimigo
     public void SetPositionInGrid(int r, int c, EnemyManager m)
     {
@@ -41,8 +49,9 @@ public class Enemy : Shooter, ICharacterStats
         manager = m;
     }
     
-    public override void CanShoot()
+    public bool CanShoot()
     {
+<<<<<<< HEAD
 <<<<<<< Updated upstream
         if (manager == null || dead) return;
             
@@ -67,6 +76,11 @@ public class Enemy : Shooter, ICharacterStats
         //SpawnBullet();
     }
 >>>>>>> Stashed changes
+=======
+        return !manager.HasEnemyBelow(row, col);
+    }
+
+>>>>>>> parent of 6d5a5f5 (enemy shooting system)
     public void Death()
     {
         life = 0;
@@ -76,10 +90,18 @@ public class Enemy : Shooter, ICharacterStats
     }
 <<<<<<< Updated upstream
     
+<<<<<<< HEAD
     
 =======
 
 >>>>>>> Stashed changes
+=======
+    public override void Shoot()
+    {
+        
+    }
+
+>>>>>>> parent of 6d5a5f5 (enemy shooting system)
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Wall"))

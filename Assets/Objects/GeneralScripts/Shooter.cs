@@ -18,8 +18,12 @@ public abstract class Shooter : MonoBehaviour, ICharacterShooter
     
     public abstract void CanShoot();
     public abstract void Shoot();
+<<<<<<< HEAD
 <<<<<<< Updated upstream
     public abstract void CanShoot();
+=======
+
+>>>>>>> parent of 6d5a5f5 (enemy shooting system)
 
 =======
 
