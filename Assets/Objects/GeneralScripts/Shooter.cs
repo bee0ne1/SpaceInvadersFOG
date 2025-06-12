@@ -18,6 +18,6 @@ public abstract class Shooter : MonoBehaviour, ICharacterShooter
     
 
     public abstract void Shoot();
-
+    public abstract void CanShoot();
 
 }

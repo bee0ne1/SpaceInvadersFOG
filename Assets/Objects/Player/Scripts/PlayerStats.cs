@@ -15,11 +15,13 @@ public class PlayerStats : MonoBehaviour, ICharacterStats
         dead = false;
         animator = GetComponent<Animator>();
     }
-
-    void OnCollisionEnter2D(Collision2D other)
+    
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.collider.CompareTag("Wall"))
+        if (other.CompareTag("EnemyBullet")) // ou o nome da tag da sua bala
+        {
             Death();
+        }
     }
 
 
@@ -29,6 +31,8 @@ public class PlayerStats : MonoBehaviour, ICharacterStats
         dead = true;
         animator.SetTrigger("Die");
        
+        var rb = GetComponent<Rigidbody2D>();
+        rb.linearVelocity = Vector2.zero;
         var move = GetComponent<PlayerMovement>();
         if (move != null) move.enabled = false;
         var shoot = GetComponent<PlayerShoot>();

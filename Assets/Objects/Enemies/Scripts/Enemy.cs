@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.Collections;
 
@@ -7,7 +8,8 @@ public class Enemy : Shooter, ICharacterStats
     public bool dead { get; set; }
     
     private EnemyManager manager;
-    public Animator animator;
+    private Animator animator;
+    private Bullet currentBullet;
     private int row;
     private int col;
     
@@ -18,8 +20,7 @@ public class Enemy : Shooter, ICharacterStats
         direction = Vector2.down;
         animator = GetComponent<Animator>();
     }
-    
-    
+
     // Método que o EnemyManager chama para registrar a posição do inimigo
     public void SetPositionInGrid(int r, int c, EnemyManager m)
     {
@@ -28,11 +29,19 @@ public class Enemy : Shooter, ICharacterStats
         manager = m;
     }
     
-    public bool CanShoot()
+    public override void CanShoot()
     {
-        return !manager.HasEnemyBelow(row, col);
+        if (manager == null || dead) return;
+            
+        Shoot();
+        
     }
-
+    
+    public override void Shoot()
+    {
+        SpawnBullet();
+    }
+    
     public void Death()
     {
         life = 0;
@@ -41,11 +50,7 @@ public class Enemy : Shooter, ICharacterStats
         Destroy(gameObject,0.2f);
     }
     
-    public override void Shoot()
-    {
-        
-    }
-
+    
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Wall"))
