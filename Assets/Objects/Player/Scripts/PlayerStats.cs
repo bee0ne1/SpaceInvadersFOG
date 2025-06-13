@@ -18,12 +18,11 @@ public class PlayerStats : MonoBehaviour, ICharacterStats
     
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("EnemyBullet")) // ou o nome da tag da sua bala
+        if (other.CompareTag("EnemyBullet") || other.CompareTag("Enemy")) // ou o nome da tag da sua bala
         {
             Death();
         }
     }
-
 
     public void Death()
     {

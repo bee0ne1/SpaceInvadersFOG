@@ -7,6 +7,8 @@ TagManager:
   - Wall
   - PlayerBullet
   - EnemyBullet
+  - Enemy
+  - enemy
   layers:
   - Default
   - TransparentFX
@@ -18,8 +20,8 @@ TagManager:
   - InvisibleWall
   - EnemyBullet
   - Enemy
-  - 
-  - 
+  - Bunker
+  - UFO
   - 
   - 
   - 
