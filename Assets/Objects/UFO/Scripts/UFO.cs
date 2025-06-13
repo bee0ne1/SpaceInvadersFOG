@@ -1,84 +1,82 @@
 using UnityEngine;
-using System.Collections;
+
 public class UFO : MonoBehaviour
 {
+    [Header("Configuração")]
     public float speed = 5f;
-    public float minSpawnTime = 10f;
-    public float maxSpawnTime = 30f;
-    public int bonusPoints = 100;
-    public AudioClip spawnSound;
     public AudioClip destroySound;
+    public float screenOffset = 1f;
 
-    private Vector3 leftOffscreen = new Vector3(-10f, 4f, 0);
-    private Vector3 rightOffscreen = new Vector3(10f, 4f, 0);
-    private bool movingRight;
-    private AudioSource audioSource;
-    private bool isActive = false;
     private Animator animator;
+    private AudioSource audioSource;
 
-    void Start()
+    private Vector2 direction;
+    private bool isActive = true;
+
+    private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-        StartCoroutine(SpawnRoutine());
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
+        SetStartingPositionAndDirection();
     }
 
-    void Update()
+    private void Update()
     {
-        if (!isActive) return;
-
-        transform.Translate((movingRight ? Vector3.right : Vector3.left) * speed * Time.deltaTime);
-
-        // Se saiu da tela, desativa
-        if (movingRight && transform.position.x > 10f ||
-            !movingRight && transform.position.x < -10f)
+        if (isActive)
+            transform.Translate(direction * speed * Time.deltaTime);
+        
+        if (Mathf.Abs(transform.position.x) > Camera.main.orthographicSize * Camera.main.aspect + screenOffset + 1f)
         {
-            gameObject.SetActive(false);
             isActive = false;
-            StartCoroutine(SpawnRoutine());
+            GameManager.Instance.ClearUFO();
+            Destroy(gameObject);
         }
-    }
-
-    private System.Collections.IEnumerator SpawnRoutine()
-    {
-        float waitTime = Random.Range(minSpawnTime, maxSpawnTime);
-        yield return new WaitForSeconds(waitTime);
-
-        movingRight = Random.value > 0.5f;
-        transform.position = movingRight ? leftOffscreen : rightOffscreen;
-        gameObject.SetActive(true);
-        isActive = true;
-
-        if (spawnSound)
-            audioSource.PlayOneShot(spawnSound);
     }
 
     public void DestroyUFO()
     {
+        if (!isActive) return;
         StartCoroutine(DestroyUFORoutine());
     }
 
-    private IEnumerator DestroyUFORoutine()
+    private System.Collections.IEnumerator DestroyUFORoutine()
     {
         animator.Play("dying");
-        if (destroySound) audioSource.PlayOneShot(destroySound);
+
+        if (destroySound)
+            audioSource.PlayOneShot(destroySound);
 
         isActive = false;
 
-        yield return new WaitForSeconds(0.2f); // Espera a animação
+        yield return new WaitForSeconds(0.5f);
 
-        StartCoroutine(SpawnRoutine()); // Pode rodar antes de desativar
+        GameManager.Instance.ClearUFO();
 
-        yield return null; // Espera um frame se quiser garantir
+        gameObject.SetActive(false);
+    }
 
-        gameObject.SetActive(false); // Só desativa no final
+    private void SetStartingPositionAndDirection()
+    {
+        float screenY = Camera.main.orthographicSize;
+        float screenX = screenY * Camera.main.aspect;
+
+        bool fromLeft = Random.value < 0.5f;
+
+        if (fromLeft)
+        {
+            transform.position = new Vector3(-screenX - screenOffset, screenY - 0.5f, 0);
+            direction = Vector2.right;
+        }
+        else
+        {
+            transform.position = new Vector3(screenX + screenOffset, screenY - 0.5f, 0);
+            direction = Vector2.left;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("PlayerBullet"))
-        {
             DestroyUFO();
-        }
     }
 }

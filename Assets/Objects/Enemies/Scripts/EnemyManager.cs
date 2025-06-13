@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -7,16 +8,16 @@ public class EnemyManager : MonoBehaviour
     public GameObject[] enemyPrefabs; // 1 prefab por linha, cada um com Animator
 
     private int rows;
-    private int cols = 10;
-    private float spacing = 1.5f;
+    private int cols = 11;
+    private float spacing = 0.6f;
     private Enemy[,] grid;
 
-    private float moveSpeed = 0.3f;
+    private float moveSpeed = 0.1f;
     private float moveInterval;
     private float moveTimer = 0f;
     private float shootTimer = 0f;
     private float shootInterval;
-    
+    [SerializeField] public bool allEnemiesSpawned = false;
     private int moveDirection = 1;
     private bool shouldChangeDirection = false;
     private bool toggleAnimation = false;
@@ -25,6 +26,12 @@ public class EnemyManager : MonoBehaviour
     {
         rows = enemyPrefabs.Length;
         grid = new Enemy[rows, cols];
+
+        StartCoroutine(SpawnEnemiesGradually());
+    }
+    
+    private IEnumerator SpawnEnemiesGradually()
+    {
         Vector2 offset = new Vector2((cols - 1) * spacing / 2f, -(rows - 1) * spacing / 2f);
 
         for (int row = 0; row < rows; row++)
@@ -39,31 +46,43 @@ public class EnemyManager : MonoBehaviour
                 Enemy enemy = enemyGO.GetComponent<Enemy>();
                 grid[row, col] = enemy;
                 enemy.SetPositionInGrid(row, col, this);
+
+                yield return new WaitForSeconds(0.03f); // Pequeno intervalo entre os inimigos
             }
         }
+        allEnemiesSpawned = true;
     }
 
     void Update()
     {
-        moveTimer += Time.deltaTime;
-        
-        int remainingEnemies = CountRemainingEnemies();
-        float difficultyFactor = Mathf.Clamp01(1f - (remainingEnemies / (float)(rows * cols)));
-        
-        moveInterval = Mathf.Lerp(0.05f, 0.5f, 1f - difficultyFactor);
-        shootInterval = Mathf.Lerp(0.5f, 1f, 1f - difficultyFactor);
-        
-        if (moveTimer >= moveInterval)
+        if (allEnemiesSpawned)
         {
-            MoveGrid();
-            moveTimer = 0f;
-        }
-        
-        shootTimer += Time.deltaTime;
-        if (shootTimer >= shootInterval)
-        {
-            TryShoot();
-            shootTimer = 0f;
+            moveTimer += Time.deltaTime;
+
+            int remainingEnemies = CountRemainingEnemies();
+            float difficultyFactor = Mathf.Clamp01(1f - (remainingEnemies / (float)(rows * cols)));
+            
+            if (remainingEnemies <= 1)
+                moveInterval = 0.02f;
+            else
+                moveInterval = Mathf.Lerp(1.0f, 0.02f, difficultyFactor);
+            
+            float rawShootInterval = Mathf.Lerp(1.5f, 0.3f, difficultyFactor);
+            shootInterval = Mathf.Max(rawShootInterval, 1.0f);
+
+
+            if (moveTimer >= moveInterval)
+            {
+                MoveGrid();
+                moveTimer = 0f;
+            }
+
+            shootTimer += Time.deltaTime;
+            if (shootTimer >= shootInterval)
+            {
+                TryShoot();
+                shootTimer = 0f;
+            }
         }
     }
     
@@ -74,7 +93,7 @@ public class EnemyManager : MonoBehaviour
         if (shouldChangeDirection)
         {
             moveDirection *= -1;
-            transform.position += Vector3.down * spacing;
+            transform.position += Vector3.down * spacing/2;
             shouldChangeDirection = false;
         }
         else
@@ -94,7 +113,7 @@ public class EnemyManager : MonoBehaviour
                     Animator animator = enemy.GetComponent<Animator>();
                     if (animator != null)
                     {
-                        animator.Play(toggleAnimation ? "default1" : "default2");
+                        animator.Play(toggleAnimation ? "default2" : "default1");
                     }
                 }
             }

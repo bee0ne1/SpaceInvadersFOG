@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &536750673152480329
+--- !u!1 &906109146750126566
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 302304122734625711}
-  - component: {fileID: 7567783193529711874}
-  - component: {fileID: 1619332303543059658}
+  - component: {fileID: 3539454442928560753}
+  - component: {fileID: 3801737060820241905}
+  - component: {fileID: 1991359863439345385}
   m_Layer: 7
-  m_Name: InvisibleWall
-  m_TagString: Wall
+  m_Name: InvisibleWallDown
+  m_TagString: GameOverWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &302304122734625711
+--- !u!4 &3539454442928560753
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 536750673152480329}
+  m_GameObject: {fileID: 906109146750126566}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.77, y: -0.01, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &7567783193529711874
+--- !u!61 &3801737060820241905
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 536750673152480329}
+  m_GameObject: {fileID: 906109146750126566}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -67,7 +67,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.00000047683716}
+  m_Offset: {x: 0, y: -3.488}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -77,16 +77,16 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 16.012104}
+  m_Size: {x: 10.666, y: 1}
   m_EdgeRadius: 0
---- !u!50 &1619332303543059658
+--- !u!50 &1991359863439345385
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 536750673152480329}
+  m_GameObject: {fileID: 906109146750126566}
   m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
