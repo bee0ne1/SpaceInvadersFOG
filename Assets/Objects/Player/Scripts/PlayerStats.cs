@@ -8,7 +8,8 @@ public class PlayerStats : MonoBehaviour, ICharacterStats
     public bool dead { get; set; }
     
     private Animator animator;
-
+    
+    
     void Awake()
     {
         life = 1;
@@ -28,17 +29,43 @@ public class PlayerStats : MonoBehaviour, ICharacterStats
     {
         life = 0;
         dead = true;
-        animator.SetTrigger("Die");
-       
+
         var rb = GetComponent<Rigidbody2D>();
         rb.linearVelocity = Vector2.zero;
+
         var move = GetComponent<PlayerMovement>();
         if (move != null) move.enabled = false;
+
         var shoot = GetComponent<PlayerShoot>();
         if (shoot != null) shoot.enabled = false;
-        
-        Destroy(gameObject, 1f); 
+
+        animator.SetTrigger("Die");
     }
+
+    /*
+    if (GameManager.totalLives > 0)
+    {
+        GameManager.totalLives--;
+        UIManager.UpdateLives(GameManager.totalLives);
+        Invoke(nameof(RespawnAfterDelay), 1f); // Aguarda animação de morte
+    }
+    else
+    {
+        Invoke(nameof(GameOver), 1f);
+    }
+}
+private void RespawnAfterDelay()
+{
+    GameManager.Instance.RespawnAfterDeath();
+    Destroy(gameObject);
+}
+
+private void GameOver()
+{
+    GameManager.Instance.GameOver();
+    Destroy(gameObject);
+}
+*/
     
 
 }

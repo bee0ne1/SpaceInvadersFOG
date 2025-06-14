@@ -93,7 +93,7 @@ public class EnemyManager : MonoBehaviour
         if (shouldChangeDirection)
         {
             moveDirection *= -1;
-            transform.position += Vector3.down * spacing/2;
+            transform.position += Vector3.down * 2f; //spacing/2;
             shouldChangeDirection = false;
         }
         else
