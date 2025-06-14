@@ -47,6 +47,12 @@ MonoBehaviour:
   playerPrefab: {fileID: 2781370127387443023, guid: 46ba1d2c535c71ddbaf37aca94ee7e9b, type: 3}
   playerSpawnPoint: {fileID: 0}
   ufoPrefab: {fileID: 7180169201389094352, guid: 5c2f515b831eba1ca96344be49377bdd, type: 3}
-  ufoRespawnDelay: 3
+  minUfoRespawnDelay: 10
+  maxUfoRespawnDelay: 30
   enemyWavePrefab: {fileID: 818018440245261217, guid: 8b0181aced37160dcbe6279ab472c334, type: 3}
   enemiesSpawnPoint: {fileID: 0}
+  bunkerPrefab: {fileID: 8177392014336378431, guid: ece25c19ba66927d492a26b210cf9ace, type: 3}
+  bunker1position: {fileID: 0}
+  bunker2position: {fileID: 0}
+  bunker3position: {fileID: 0}
+  bunker4position: {fileID: 0}

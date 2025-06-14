@@ -3,20 +3,21 @@ using UnityEngine;
 public class UFO : MonoBehaviour
 {
     [Header("Configuração")]
-    public float speed = 5f;
+    public float speed;
     public AudioClip destroySound;
     public float screenOffset = 1f;
 
     private Animator animator;
     private AudioSource audioSource;
-
+    
     private Vector2 direction;
     private bool isActive = true;
-
+    
     private void Start()
     {
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+        
         SetStartingPositionAndDirection();
     }
 
@@ -25,6 +26,7 @@ public class UFO : MonoBehaviour
         if (isActive)
             transform.Translate(direction * speed * Time.deltaTime);
         
+        // Auto-destruir caso saia muito da tela
         if (Mathf.Abs(transform.position.x) > Camera.main.orthographicSize * Camera.main.aspect + screenOffset + 1f)
         {
             isActive = false;
