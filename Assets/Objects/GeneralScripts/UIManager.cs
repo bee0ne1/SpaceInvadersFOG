@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
     private int score;
     
     public TextMeshProUGUI highscoreText;
-    private int highscore;
+    public int highscore;
     
     public TextMeshProUGUI waveText;
     private int wave;
@@ -92,5 +92,10 @@ public class UIManager : MonoBehaviour
     public static void ResetWave()
     {
         Instance.Start();
+    }
+
+    public int getHighscore()
+    {
+        return Instance.highscore;
     }
 }
