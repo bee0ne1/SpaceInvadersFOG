@@ -5,9 +5,10 @@ public class MainMenuManager : MonoBehaviour
 {
     public void PlayGame()
     {
+        // Corrigir o problema na build: resetar GameManager
         if (GameManager.Instance != null)
         {
-            Destroy(GameManager.Instance.gameObject); // Destrói o GameManager antigo
+            Destroy(GameManager.Instance.gameObject);
             GameManager.Instance = null;
         }
 

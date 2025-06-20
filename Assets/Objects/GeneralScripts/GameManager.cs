@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (enemyManager != null && enemyManager.CountRemainingEnemies() == 0 && !afterWin)
+        if (enemyManager != null && enemyManager.allEnemiesSpawned && enemyManager.CountRemainingEnemies() == 0 && !afterWin)
         {
             afterWin = true;
             StartCoroutine(GameWin());
