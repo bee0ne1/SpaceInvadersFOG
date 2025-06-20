@@ -5,7 +5,13 @@ public class MainMenuManager : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("Game1"); // Nome exato da cena principal
+        if (GameManager.Instance != null)
+        {
+            Destroy(GameManager.Instance.gameObject); // Destrói o GameManager antigo
+            GameManager.Instance = null;
+        }
+
+        SceneManager.LoadScene("Game1");
     }
     
 

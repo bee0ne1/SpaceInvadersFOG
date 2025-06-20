@@ -1848,10 +1848,6 @@ PrefabInstance:
       value: MainMenuManager
       objectReference: {fileID: 0}
     - target: {fileID: 5159874894419590267, guid: 5c63ad263f865d54f9dae0cec17fda06, type: 3}
-      propertyPath: MainUI
-      value: 
-      objectReference: {fileID: 813268892889723878, guid: f28c6fe6604931521b8036058bea6d1f, type: 3}
-    - target: {fileID: 5159874894419590267, guid: 5c63ad263f865d54f9dae0cec17fda06, type: 3}
       propertyPath: highscoreText
       value: 
       objectReference: {fileID: 1066387056}
