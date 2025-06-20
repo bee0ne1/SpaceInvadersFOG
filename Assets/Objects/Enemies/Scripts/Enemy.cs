@@ -12,6 +12,7 @@ public class Enemy : Shooter, ICharacterStats
     private Bullet currentBullet;
     private int row;
     private int col;
+    private int enemyScore;
     
     void Awake()
     {
@@ -22,10 +23,11 @@ public class Enemy : Shooter, ICharacterStats
     }
 
     // Método que o EnemyManager chama para registrar a posição do inimigo
-    public void SetPositionInGrid(int r, int c, EnemyManager m)
+    public void SetPositionInGrid(int r, int c,int s, EnemyManager m)
     {
         row = r;
         col = c;
+        enemyScore = s;
         manager = m;
     }
     
@@ -48,6 +50,7 @@ public class Enemy : Shooter, ICharacterStats
         dead = true;
         animator.Play("dying");
         Destroy(gameObject,0.2f);
+        UIManager.UpdateScore(enemyScore);
     }
     
     

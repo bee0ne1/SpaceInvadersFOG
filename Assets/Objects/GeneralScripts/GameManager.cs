@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     private int lives;
+    private bool afterWin = false;
     private GameObject currentWaveGO;
     private GameObject currentPlayer;
     private GameObject[] currentBunkers = new GameObject[4];
@@ -48,8 +49,9 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (enemyManager != null && enemyManager.CountRemainingEnemies() == 0)
+        if (enemyManager != null && enemyManager.CountRemainingEnemies() == 0 && !afterWin)
         {
+            afterWin = true;
             StartCoroutine(GameWin());
         }
     }
@@ -85,8 +87,12 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        lives = 3;
-        UIManager.UpdateLives(lives);
+        if (!afterWin)
+        {
+            lives = 3;
+            UIManager.UpdateLives(lives);
+        }
+
         SpawnBunkers();
         currentWaveGO = Instantiate(enemyWavePrefab, enemiesSpawnPoint.position, enemiesSpawnPoint.rotation);
         enemyManager = currentWaveGO.GetComponent<EnemyManager>();
@@ -126,8 +132,10 @@ public class GameManager : MonoBehaviour
     private IEnumerator WaitForEnemiesToSpawn(EnemyManager enemyManager)
     {
         yield return new WaitUntil(() => enemyManager.allEnemiesSpawned);
-
-        currentPlayer = Instantiate(playerPrefab, playerSpawnPoint.position, playerSpawnPoint.rotation);        
+        
+        afterWin = false;
+        
+        currentPlayer = Instantiate(playerPrefab, playerSpawnPoint.position, playerSpawnPoint.rotation);
         
         StartCoroutine(UFORespawnRoutine());
     }
@@ -149,12 +157,15 @@ public class GameManager : MonoBehaviour
     public static void GameOver()
     {
         //COLOCAR FUNCAO QUE SALVA O SCORE E RESETA
+        UIManager.ResetScore();
+        UIManager.ResetWave();
         Instance.Start();
     }
 
     private IEnumerator GameWin()
     {
         yield return new WaitForSeconds(1.5f);
+        UIManager.UpdateWave();
         Instance.Start();
     }
     

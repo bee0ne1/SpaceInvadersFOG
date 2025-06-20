@@ -46,7 +46,24 @@ public class EnemyManager : MonoBehaviour
 
                 Enemy enemy = enemyGO.GetComponent<Enemy>();
                 grid[row, col] = enemy;
-                enemy.SetPositionInGrid(row, col, this);
+                
+                int enemyScore = 0;
+                switch (row)
+                {
+                    case 0:
+                        enemyScore = 30;
+                        break;
+                    case 1:
+                    case 2:
+                        enemyScore = 20;
+                        break;
+                    case 3:
+                    case 4:
+                        enemyScore = 10;
+                        break;
+                }
+                
+                enemy.SetPositionInGrid(row, col, enemyScore,this);
 
                 yield return new WaitForSeconds(0.03f); // Pequeno intervalo entre os inimigos
             }
@@ -144,21 +161,7 @@ public class EnemyManager : MonoBehaviour
     {
         shouldChangeDirection = true;
     }
-
-    public bool HasEnemyBelow(int row, int col)
-    {
-        for (int r = row + 1; r < rows; r++)
-        {
-            if (grid[r, col] != null)
-                return true;
-        }
-        return false;
-    }
-
-    public void RemoveEnemy(int row, int col)
-    {
-        grid[row, col] = null;
-    }
+    
 
     public List<Enemy> GetBottomEnemies()
     {

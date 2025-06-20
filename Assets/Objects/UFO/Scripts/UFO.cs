@@ -12,9 +12,11 @@ public class UFO : MonoBehaviour
     
     private Vector2 direction;
     private bool isActive = true;
+    private int UFOscore;
     
     private void Start()
     {
+        UFOscore = UFOScoreRandomizer();
         animator = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         
@@ -38,6 +40,7 @@ public class UFO : MonoBehaviour
     public void DestroyUFO()
     {
         if (!isActive) return;
+        UIManager.UpdateScore(UFOscore);
         StartCoroutine(DestroyUFORoutine());
     }
 
@@ -51,7 +54,7 @@ public class UFO : MonoBehaviour
         isActive = false;
 
         yield return new WaitForSeconds(0.5f);
-
+        
         GameManager.Instance.ClearUFO();
 
         gameObject.SetActive(false);
@@ -81,4 +84,12 @@ public class UFO : MonoBehaviour
         if (other.CompareTag("PlayerBullet"))
             DestroyUFO();
     }
+
+    int UFOScoreRandomizer()
+    {
+        int[] options = { 50, 100, 150, 300 };
+        int index = UnityEngine.Random.Range(0, options.Length);
+        return options[index];
+    }
+    
 }

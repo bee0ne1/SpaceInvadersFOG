@@ -14,7 +14,7 @@ public class UIManager : MonoBehaviour
     private int highscore;
     
     public TextMeshProUGUI waveText;
-    private int wave = 0;
+    private int wave;
 
     public Image[] lifeSprites;
     private Color32 active = new Color32(255, 255, 255, 255);   
@@ -28,7 +28,12 @@ public class UIManager : MonoBehaviour
             Destroy(gameObject);
         
     }
-    
+
+    private void Start()
+    {
+        Instance.wave = 1;
+        Instance.waveText.text = Instance.wave.ToString();
+    }
 
     public static void UpdateLives(int l)
     {
@@ -53,14 +58,24 @@ public class UIManager : MonoBehaviour
         Instance.scoreText.text = Instance.score.ToString("000000");
     }
 
+    public static void ResetScore()
+    {
+        Instance.score = 0;
+        Instance.scoreText.text = Instance.score.ToString("000000");
+    }
     public static void UpdateHighscore(int s)
     {
         
     }
 
-    public static void UpdateWave(int w)
+    public static void UpdateWave()
     {
         Instance.wave++;
         Instance.waveText.text = Instance.wave.ToString();
+    }
+
+    public static void ResetWave()
+    {
+        Instance.Start();
     }
 }
