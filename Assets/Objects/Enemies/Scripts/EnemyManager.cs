@@ -12,7 +12,7 @@ public class EnemyManager : MonoBehaviour
     private float spacing = 0.6f;
     private Enemy[,] grid;
 
-    private float moveSpeed = 0.1f;
+    public float moveSpeed = 0.1f;
     private float moveInterval;
     private float moveTimer = 0f;
     private float shootTimer = 0f;
@@ -21,6 +21,7 @@ public class EnemyManager : MonoBehaviour
     private int moveDirection = 1;
     private bool shouldChangeDirection = false;
     private bool toggleAnimation = false;
+    public bool isPaused = false;
 
     void Start()
     {
@@ -51,25 +52,25 @@ public class EnemyManager : MonoBehaviour
             }
         }
         allEnemiesSpawned = true;
+        isPaused = false;
     }
 
     void Update()
     {
-        if (allEnemiesSpawned)
+        if (allEnemiesSpawned && !isPaused) // <-- aqui
         {
             moveTimer += Time.deltaTime;
 
             int remainingEnemies = CountRemainingEnemies();
             float difficultyFactor = Mathf.Clamp01(1f - (remainingEnemies / (float)(rows * cols)));
-            
+
             if (remainingEnemies <= 1)
                 moveInterval = 0.02f;
             else
                 moveInterval = Mathf.Lerp(1.0f, 0.02f, difficultyFactor);
-            
+
             float rawShootInterval = Mathf.Lerp(1.5f, 0.3f, difficultyFactor);
             shootInterval = Mathf.Max(rawShootInterval, 1.0f);
-
 
             if (moveTimer >= moveInterval)
             {
@@ -85,6 +86,7 @@ public class EnemyManager : MonoBehaviour
             }
         }
     }
+
     
     
     
@@ -93,7 +95,7 @@ public class EnemyManager : MonoBehaviour
         if (shouldChangeDirection)
         {
             moveDirection *= -1;
-            transform.position += Vector3.down * 2f; //spacing/2;
+            transform.position += Vector3.down * spacing/2;
             shouldChangeDirection = false;
         }
         else
@@ -175,7 +177,7 @@ public class EnemyManager : MonoBehaviour
         return bottomEnemies;
     }
 
-    private int CountRemainingEnemies()
+    public int CountRemainingEnemies()
     {
         int count = 0;
         for (int row = 0; row < rows; row++)
@@ -188,4 +190,5 @@ public class EnemyManager : MonoBehaviour
         }
         return count;
     }
+    
 }

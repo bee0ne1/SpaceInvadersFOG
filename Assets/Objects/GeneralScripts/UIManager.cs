@@ -17,8 +17,8 @@ public class UIManager : MonoBehaviour
     private int wave = 0;
 
     public Image[] lifeSprites;
-    private Color32 active = new Color32(1, 1, 1, 1);   
-    private Color32 inactive = new Color32(1, 1, 1, 0);
+    private Color32 active = new Color32(255, 255, 255, 255);   
+    private Color32 inactive = new Color32(255, 255, 255, 10);
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
@@ -28,15 +28,23 @@ public class UIManager : MonoBehaviour
             Destroy(gameObject);
         
     }
+    
 
     public static void UpdateLives(int l)
     {
-        foreach (Image i in Instance.lifeSprites)
-            i.color = Instance.inactive;
-        for (int i = 0; i < l; i++)
+        if (Instance == null || Instance.lifeSprites == null)
         {
-            Instance.lifeSprites[i].color = Instance.active;
+            return;
         }
+        
+        l = Mathf.Clamp(l, 0, Instance.lifeSprites.Length);
+
+        for (int i = 0; i < Instance.lifeSprites.Length; i++)
+        {
+            // Ativa os ícones até o número de vidas
+            Instance.lifeSprites[i].color = (i < l) ? Instance.active : Instance.inactive;
+        }
+        
     }
 
     public static void UpdateScore(int s)

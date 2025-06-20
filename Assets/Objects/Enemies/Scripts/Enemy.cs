@@ -57,6 +57,17 @@ public class Enemy : Shooter, ICharacterStats
             manager.NotifyWallHit();
         if (other.CompareTag("PlayerBullet"))
             Death();
+        if (other.CompareTag("GameOverWall"))
+        {
+            GameManager.Instance?.PauseEnemies(); 
+            StartCoroutine(GameOverWallTime());
+        }
+    }
+
+    IEnumerator GameOverWallTime()
+    {
+        yield return new WaitForSeconds(1f);
+        GameManager.GameOver();
     }
     
     

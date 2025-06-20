@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -19,7 +20,7 @@ public class PlayerStats : MonoBehaviour, ICharacterStats
     
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("EnemyBullet") || other.CompareTag("Enemy")) // ou o nome da tag da sua bala
+        if (other.CompareTag("EnemyBullet") || other.CompareTag("Enemy")) 
         {
             Death();
         }
@@ -29,6 +30,8 @@ public class PlayerStats : MonoBehaviour, ICharacterStats
     {
         life = 0;
         dead = true;
+        
+        GameManager.Instance?.PauseEnemies(); 
 
         var rb = GetComponent<Rigidbody2D>();
         rb.linearVelocity = Vector2.zero;
@@ -40,32 +43,19 @@ public class PlayerStats : MonoBehaviour, ICharacterStats
         if (shoot != null) shoot.enabled = false;
 
         animator.SetTrigger("Die");
+        
+        
+        StartCoroutine(DeathAnimationTime());
+        
     }
 
-    /*
-    if (GameManager.totalLives > 0)
+    public IEnumerator DeathAnimationTime()
     {
-        GameManager.totalLives--;
-        UIManager.UpdateLives(GameManager.totalLives);
-        Invoke(nameof(RespawnAfterDelay), 1f); // Aguarda animação de morte
+        yield return new WaitForSeconds(1f);
+        
+        GameManager.PlayerDeathController();
+        
     }
-    else
-    {
-        Invoke(nameof(GameOver), 1f);
-    }
-}
-private void RespawnAfterDelay()
-{
-    GameManager.Instance.RespawnAfterDeath();
-    Destroy(gameObject);
-}
-
-private void GameOver()
-{
-    GameManager.Instance.GameOver();
-    Destroy(gameObject);
-}
-*/
     
 
 }
