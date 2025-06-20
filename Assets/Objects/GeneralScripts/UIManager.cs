@@ -33,6 +33,10 @@ public class UIManager : MonoBehaviour
     {
         Instance.wave = 1;
         Instance.waveText.text = Instance.wave.ToString();
+        
+        // Carrega e mostra o highscore salvo
+        Instance.highscore = PlayerPrefs.GetInt("HighScore", 0);
+        Instance.highscoreText.text = Instance.highscore.ToString("000000");
     }
 
     public static void UpdateLives(int l)
@@ -60,12 +64,23 @@ public class UIManager : MonoBehaviour
 
     public static void ResetScore()
     {
+        UpdateHighscore(Instance.score);
         Instance.score = 0;
         Instance.scoreText.text = Instance.score.ToString("000000");
     }
     public static void UpdateHighscore(int s)
     {
-        
+        int savedHighscore = PlayerPrefs.GetInt("HighScore", 0);
+
+        if (s > savedHighscore)
+        {
+            PlayerPrefs.SetInt("HighScore", s);
+            PlayerPrefs.Save();
+            savedHighscore = s;
+        }
+
+        Instance.highscore = savedHighscore;
+        Instance.highscoreText.text = Instance.highscore.ToString("000000");
     }
 
     public static void UpdateWave()
